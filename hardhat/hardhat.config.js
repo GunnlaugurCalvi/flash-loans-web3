@@ -1,8 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-const INFURA = "6c974f3a00e4430bb4262c14d9239216";
-const SEPOLIA_PRIVATE_KEY =
-  "e5168fa30bbc332d7f2b6289596ebd654ae345938f78af525e4cc2071214c3b0";
+const INFURA = process.env.INFURA_API_KEY;
+const SEPOLIA_PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 //Extend hardhat task
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -17,7 +16,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 module.exports = {
   solidity: "0.8.19",
   etherscan: {
-    apiKey: "DSN3P5NBQP8B1XIGUJKIYCFQYDFHYYP2HF",
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   networks: {
     sepolia: {
